@@ -1,0 +1,19 @@
+# Custom functions are HERE
+# File Name: .bash_functions
+
+#############
+# Functions #
+#############
+
+history_clean()
+{
+  # Clear history file ( -f checks if file exists and -s checks if file is NOT NULL )
+  history -c
+
+  [ -f "${HOME}/.bash_history" ] && rm "${HOME}/.bash_history"
+}
+
+############
+# Not USED #
+############
+

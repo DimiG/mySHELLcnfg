@@ -1,0 +1,37 @@
+# Custom aliases for SHELL
+# File Name: .bash_aliases
+
+#############
+# Aliases   #
+#############
+
+# Custom Aliases
+alias rm='rm -vI'
+alias cp='cp -vi'
+alias mv='mv -vi'
+alias h='history_clean'
+alias md='mkdir -pv'
+alias messages='sudo tail -n 100 /var/log/messages'
+alias sudo='sudo '
+alias r='reset'
+alias c='clear'
+alias q='exit'
+
+alias l='ls -1'
+alias la='ls -lhAF'                          # all but . and ..
+alias ll='ls -lhF'                           # long list
+alias lt="ls -lhtrF"
+alias l.="ls -lhtrdF .*"
+alias dir="lt"
+alias dot="l."
+alias cd..="cd .."
+alias cd...="cd ../.."
+alias cd....="cd ../../.."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Default for human readable form
+alias df='df -h'
+alias du='du -h'
+

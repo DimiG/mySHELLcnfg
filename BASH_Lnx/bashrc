@@ -1,0 +1,35 @@
+# File Name: .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# Prompt SetUP
+if [ "$EUID" -eq 0 ]; then
+  # Prompt for ROOT
+  PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
+else
+  # Prompt for USER
+  PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
+fi
+
+#############
+# Aliases   #
+#############
+
+# Some people use a different file for aliases
+if [ -f "${HOME}/.bash_aliases" ]; then
+  source "${HOME}/.bash_aliases"
+fi
+
+#############
+# Functions #
+#############
+
+# Some people use a different file for functions
+if [ -f "${HOME}/.bash_functions" ]; then
+  source "${HOME}/.bash_functions"
+fi
+
+unset HISTFILE
