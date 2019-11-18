@@ -1,0 +1,20 @@
+# Custom Functions for SHELL
+# File Name: .bash_functions
+
+#############
+# Functions #
+#   Main    #
+#############
+
+history_clean()
+{
+  # Clear history file ( -f check if file exists and -s check if file is not null )
+  history -c
+
+  [ -f "${HOME}/.bash_history" ] && rm "${HOME}/.bash_history"
+}
+
+###############
+# Not Used... #
+###############
+

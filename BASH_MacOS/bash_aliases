@@ -1,0 +1,39 @@
+# Custom aliases for SHELL
+# File Name: .bash_aliases
+
+#############
+# Aliases   #
+#############
+
+alias rm='rm -v'
+alias cp='cp -vi'
+alias mv='mv -vi'
+alias md='mkdir -p'
+alias h='history_clean'
+alias q='exit'
+alias c='clear'
+alias df='df -hl'
+alias l='ls -1'
+alias la='ls -lhAF'
+alias ll='ls -lhF'
+alias lt="ls -lhtrF"
+alias l.="ls -lhtrdF .*"
+alias dir="lt"
+alias dot="l."
+alias cd..="cd .."
+alias cd...="cd ../.."
+alias cd....="cd ../../.."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias flushdns='sudo killall -HUP mDNSResponder && say cache flushed'
+alias battery="ioreg -w0 -l | grep Capacity"
+alias e="diskutil eject disk1"
+alias diu="diskutil $*"
+alias o="open ."
+
+#############
+#  Unused   #
+#############
+
