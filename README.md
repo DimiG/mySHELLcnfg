@@ -9,6 +9,8 @@ File descriptions
 
 * `BASH_MacOS`: These [configuration files][cnfg] specific for [Mac OS][macos] [BASH][bash].  
 
+* `ZSH_Lnx`: These [configuration files][cnfg] specific for [Linux][linux] [ZSH][zsh] installation.  
+
 * `All Configurations`:  
    **Note:** `Dotted` hidden [configuration files][cnfg] was renamed without dots. To use it - rename them back. See comments inside them. [Configuration files][cnfg] may be changed TIME to TIME.  
    ***Requires :*** Pre-Installed [operating system][os].  
@@ -25,3 +27,4 @@ This code has been written by ©2019 DimiG
 [os]:https://en.wikipedia.org/wiki/Operating_system
 [cnfg]:https://en.wikipedia.org/wiki/Configuration_file
 [macos]:https://en.wikipedia.org/wiki/MacOS
+[zsh]:https://en.wikipedia.org/wiki/Z_shell

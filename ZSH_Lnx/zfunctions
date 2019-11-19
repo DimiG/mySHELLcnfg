@@ -1,0 +1,33 @@
+# Custom Functions are HERE
+# --------------------------------------------------------------------
+# Functions
+# --------------------------------------------------------------------
+# File Name: .zfunctions
+
+history_clean() {
+    # Clear history file ( -f check if file exists, -s check if file is not null )
+    [ -f "${HOME}/.bash_history" ] && rm "${HOME}/.bash_history"
+
+    # Stop ssh daemon if running...
+    if [ ! -z $(ps aux | grep '[s]sh' | awk '{print $1}') ]; then
+        echo "SSH stopping..."
+        ps aux | grep '[s]sh' | grep -v "grep" | awk '{print $1}' | xargs kill -9
+    fi
+}
+
+# --------------------------------------------------------------------
+# etc...
+# --------------------------------------------------------------------
+
+showHelp() {
+    tput setaf 3
+    echo -e ""
+    echo -e "Usage: $funcName filename"
+    echo -e ""
+    tput sgr0
+}
+
+# --------------------------------------------------------------------
+# *** NOT Used ***
+# --------------------------------------------------------------------
+

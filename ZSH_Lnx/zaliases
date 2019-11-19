@@ -1,0 +1,39 @@
+# Custom aliases for SHELL
+# --------------------------------------------------------------------
+# Aliases
+# --------------------------------------------------------------------
+# File Name: .zaliases
+
+alias h='history_clean'
+alias c='clear && printf "\e[3J"'
+alias r='reset'
+alias q='exit'
+
+alias md='mkdir -pv'
+alias rm='rm -vI'
+alias mv='mv -vi'
+alias cp='cp -vi'
+alias df='df -h'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias l='ls -lAh --color=auto --group-directories-first'
+alias ls='ls --color=auto --group-directories-first'
+alias la='ls -lhAF'
+alias ll='ls -lhF'               # long list
+alias lt="ls -lhtrF"
+alias l.="ls -lhtrdF .*"
+alias dir="lt"
+alias dot="l."
+
+alias grep='grep --color'        # show differences in colour
+alias egrep='egrep --color=auto' # show differences in colour
+alias fgrep='fgrep --color=auto' # show differences in colour
+alias less='less -r'             # raw control characters
+alias whence='type -a'           # where, of a sort
+
+# Additional values
+alias passgen='< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c6 ; echo'
+alias o='open .'
+

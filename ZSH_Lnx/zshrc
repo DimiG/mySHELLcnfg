@@ -1,0 +1,107 @@
+# --------------------------------------------------------------------
+# The main ZSH configuration file
+# --------------------------------------------------------------------
+# User ZSH Options
+# File Name: .zshrc
+
+# Load colors
+autoload -U colors && colors
+
+# Load version control information (for Git)
+autoload -Uz vcs_info
+
+# Format the vcs_info_msg_0_ variable if necessary
+zstyle ':vcs_info:git:*' formats ' (git)->[%b'
+
+for color in red green yellow blue magenta cyan black white; do
+    eval $color='%{$fg_no_bold[${color}]%}'
+done
+
+reset="%{$reset_color%}"
+
+if [[ -n "$SSH_CLIENT" || -n "$SSH2_CLIENT" ]]; then
+  host="${cyan}%m"  # SSH
+else
+  host="${cyan}lnx" # No SSH
+fi
+
+# Change title of MinTTY to current dir for ZSH
+case $TERM in
+  xterm*|rxvt*|screen*)
+    precmd() { print -Pn "\033]2;${PWD/#$HOME/~}\007"; vcs_info }
+esac
+
+if [ "$EUID" -eq 0 ]; then
+  # For ROOT
+  PROMPT='${red}[${host}${red}][${magenta}%~${red}]${reset} '
+else
+  # For USER
+  setopt PROMPT_SUBST
+  PROMPT='${green}[${host}${green}][${magenta}%~${green}${vcs_info_msg_0_}]${reset} '
+fi
+
+# Load known hosts file for auto-completion with ssh and scp commands
+if [ -f ~/.ssh/known_hosts ]; then
+  zstyle ':completion:*' hosts $( sed 's/[, ].*$//' $HOME/.ssh/known_hosts )
+  zstyle ':completion:*:*:(ssh|scp):*:*' hosts `sed 's/^\([^ ,]*\).*$/\1/' ~/.ssh/known_hosts`
+fi
+
+#############
+# Aliases   #
+#############
+
+# Some people use a different file for aliases
+if [ -f "${HOME}/.zaliases" ]; then
+  source "${HOME}/.zaliases"
+fi
+
+#############
+# Functions #
+#############
+
+# Some people use a different file for functions
+if [ -f "${HOME}/.zfunctions" ]; then
+  source "${HOME}/.zfunctions"
+fi
+
+# No beeps ;)
+unsetopt beep
+
+### The following lines were added by compinstall ###
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+### End of lines added by compinstall ###
+
+# User settings are HERE
+_comp_options+=(globdots)
+zstyle ':completion:*' menu select
+
+# --------------------------------------------------------------------
+# Bind Keys
+# --------------------------------------------------------------------
+
+# Home, End and Delete keys enable
+bindkey "^[[3~"   delete-char
+bindkey "^[[5~"   up-line-or-history
+bindkey "^[[6~"   down-line-or-history
+bindkey "^[[H"    beginning-of-line
+bindkey "^[[F"    end-of-line
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
+# --------------------------------------------------------------------
+# etc...
+# --------------------------------------------------------------------
+
+# Set user-defined locale
+export LANG=C.UTF-8
+
+# Set user defined editor
+export EDITOR="vim"
+
+path+=("$HOME/bin")
+
+unset HISTFILE
+
