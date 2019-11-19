@@ -11,6 +11,8 @@ File descriptions
 
 * `ZSH_Lnx`: These [configuration files][cnfg] specific for [Linux][linux] [ZSH][zsh] installation.  
 
+* `Tmux`: This [configuration file][cnfg] specific for [Tmux][tmux] program.  
+
 * `All Configurations`:  
    **Note:** `Dotted` hidden [configuration files][cnfg] was renamed without dots. To use it - rename them back. See comments inside them. [Configuration files][cnfg] may be changed TIME to TIME.  
    ***Requires :*** Pre-Installed [operating system][os].  
@@ -28,3 +30,4 @@ This code has been written by ©2019 DimiG
 [cnfg]:https://en.wikipedia.org/wiki/Configuration_file
 [macos]:https://en.wikipedia.org/wiki/MacOS
 [zsh]:https://en.wikipedia.org/wiki/Z_shell
+[tmux]:https://github.com/tmux/tmux/wiki

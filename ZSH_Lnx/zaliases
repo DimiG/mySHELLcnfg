@@ -30,10 +30,8 @@ alias dot="l."
 alias grep='grep --color'        # show differences in colour
 alias egrep='egrep --color=auto' # show differences in colour
 alias fgrep='fgrep --color=auto' # show differences in colour
-alias less='less -r'             # raw control characters
-alias whence='type -a'           # where, of a sort
 
-# Additional values
-alias passgen='< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c6 ; echo'
+# Additional aliases
 alias o='open .'
+alias passgen='< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c6 ; echo'
 
