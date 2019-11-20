@@ -1,0 +1,39 @@
+# ****************************** #
+#  Main lftp configuration file  #
+# ****************************** #
+#  Created by (c)2019 Dmitri G.  #
+# ****************************** #
+# File Name: rc                  #
+
+# ******* Set Variables ******** #
+set ftp:passive-mode yes
+set ftp:prefer-epsv false
+set cmd:default-protocol ftp
+set cmd:save-cwd-history false
+set cmd:save-rl-history  false
+set ssl:verify-certificate no
+set sftp:auto-confirm yes
+set xfer:log false
+
+# ******** Set Aliases ********* #
+alias j jobs
+alias jv jobs -v
+alias qu queue
+alias qd queue -d
+alias qs queue stop
+alias qst queue start
+alias k kill
+alias ka kill all
+alias m mirror -c -P 2 --use-pget-n=5
+alias p pget -c -n 6
+alias la ls
+alias md mkdir
+alias .. cd ..
+alias q quit
+
+# ****************************** #
+#           NOT USED...          #
+# ****************************** #
+#set ftp:charset "CP1251"
+#set ftp:ssl-allow false
+#set cmd:ls-default "ls -lh"
