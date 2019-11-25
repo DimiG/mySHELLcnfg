@@ -1,0 +1,17 @@
+" **************************************** "
+"       Small vimrc Configuration File     "
+" **************************************** "
+"        Created by (c)2019 Dmitri G.      "
+" **************************************** "
+
+" File Name: .vimrc
+
+color desert
+set nocompatible
+set nowrap
+set viminfo="NONE"
+syntax on
+
+" F8: Toggle list (display unprintable characters)
+noremap <F8> :set list!<cr>
+

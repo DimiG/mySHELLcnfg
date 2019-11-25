@@ -1,0 +1,170 @@
+" ****************************************************************************
+"                       Main vimrc Configuration File
+"                             ( short version )
+"                             File Name: .vimrc
+" ****************************************************************************
+"                        Created by (c)2019 Dmitri G.
+
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+" By: "export VIMINIT='source $MYVIMRC'" and
+" export MYVIMRC=~/.vim/vimrc you can change '.vimrc' file location
+
+call plug#begin('~/.vim/plugged')
+
+" ****************************************************************************
+"                           Plug install packages
+" ****************************************************************************
+" Make sure you use single quotes
+
+" Nerd Tree PlugIn
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" *** Disabled PlugIns ***
+" Plug 'jiangmiao/auto-pairs'
+
+"*****************************************************************************
+"                             Custom Bundles
+"*****************************************************************************
+
+" Include user's extra bundle
+if filereadable(expand("~/.vim/vimrc.local.bundles"))
+  source ~/.vimrc.local.bundles
+endif
+
+" Initialize plugin system
+call plug#end()
+
+" Call PlugInstall to install new plugins
+
+" ****************************************************************************
+"                              Basics Setup
+" ****************************************************************************
+
+" Encoding
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+set bomb
+set binary
+
+" ****************************************************************************
+"                              Visual Settings
+" ****************************************************************************
+
+" Syntax coloring lines that are too long just slows down system
+" set synmaxcol=128
+set ttyfast " U got a fast terminal
+set ttyscroll=3
+set lazyredraw " To avoid scrolling problems
+
+" Preferences
+color desert
+"set number
+set ruler
+set incsearch
+set ignorecase
+set smartcase
+set nohlsearch
+set nowrap
+set nocompatible
+set viminfo="NONE"
+set mouse=a
+set mousemodel=popup
+
+syntax on
+
+" Directories for swp files
+set nobackup
+set noswapfile
+
+set fileformats=unix,dos,mac
+
+" ****************************************************************************
+"                               Abbreviations
+" ****************************************************************************
+" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+
+" ****************************************************************************
+"                              Plugin settings
+" ****************************************************************************
+"
+" NERDTree
+" How can I close vim if the only window left open is a NERDTree?
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Toggle NERDTree
+nnoremap <silent> <F12> :NERDTreeToggle<CR>
+nnoremap <silent> <F3>  :NERDTreeFind<CR>
+let g:NERDTreeChDirMode=2
+let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules']
+let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeShowBookmarks=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+let g:NERDTreeWinSize = 50
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 0
+let NERDTreeDirArrows = 1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+
+" ****************************************************************************
+"                                   Mappings
+" ****************************************************************************
+
+" Map leader to ,
+"let mapleader=','
+
+" Split
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
+
+" Buffer nav
+noremap <leader>z :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>q :bp<CR>
+noremap <leader>w :bn<CR>
+
+" Close buffer
+noremap <leader>c :bd<CR>
+
+" Clean search (highlight)
+nnoremap <silent> <leader><space> :noh<cr>
+
+" Switching windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+noremap <C-d> :sh<CR>
+
+"F8: Toggle list (display unprintable characters)
+noremap <F8> :set list!<CR>
+
+" Remove white spaces
+noremap <s-F8> :FixWhitespace<cr>
+
+" <leader>s: Quick file save
+map <Esc>s :update<cr>
+noremap <leader>s :update<cr>
+inoremap <leader>s <C-o>:update<cr>
+
+" Jump
+map <c-Up> {
+map <c-Down> }
+

@@ -1,0 +1,12 @@
+" **************************************** "
+"       Small virc Configuration File      "
+" **************************************** "
+"        Created by (c)2019 Dmitri G.      "
+" **************************************** "
+
+" File Name: .virc
+
+set nocompatible
+set nowrap
+set viminfo="NONE"
+

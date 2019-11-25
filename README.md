@@ -9,14 +9,16 @@ File descriptions
 
 * `BASH_MacOS`: These [configuration files][cnfg] specific for [Mac OS][macos] [BASH][bash].  
 
-* `ZSH_Lnx`: These [configuration files][cnfg] specific for [Linux][linux] [ZSH][zsh] installation.  
+* `Lftp`: This [configuration file][cnfg] is for [Lftp][lftp] program.  
 
 * `Tmux`: This [configuration file][cnfg] is for [Tmux][tmux] program.  
 
-* `Lftp`: This [configuration file][cnfg] is for [Lftp][lftp] program.  
+* `Vim_Lnx`: These [configuration files][cnfg] specific for [Vim][vim] program.  
+
+* `ZSH_Lnx`: These [configuration files][cnfg] specific for [Linux][linux] [ZSH][zsh] installation.  
 
 * `All Configurations`:  
-   **Note:** `Dotted` hidden [configuration files][cnfg] was renamed without dots. To use it - rename them back. See comments inside them. [Configuration files][cnfg] may be changed TIME to TIME.  
+   **Note:** `Dotted` hidden [configuration files][cnfg] was renamed without dots. To use it - rename them back. **See comments inside them**. [Configuration files][cnfg] may be changed TIME to TIME.  
    ***Requires :*** Pre-Installed [operating system][os].  
 
 * `To be continued...`  
@@ -34,3 +36,4 @@ This code has been written by ©2019 DimiG
 [zsh]:https://en.wikipedia.org/wiki/Z_shell
 [tmux]:https://github.com/tmux/tmux/wiki
 [lftp]:https://en.wikipedia.org/wiki/Lftp
+[vim]:https://en.wikipedia.org/wiki/Vim_(text_editor)
