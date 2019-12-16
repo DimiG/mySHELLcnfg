@@ -22,10 +22,11 @@ set postponed = "+Черновики"
 set record = "+Отправленные"
 set trash = "+Удаленные"
 
-# Folders
+# Folders and files
 set header_cache = ~/.mutt/com.blabla.username/cache/headers
 set message_cachedir = ~/.mutt/com.blabla.username/cache/bodies
 set certificate_file = ~/.mutt/com.blabla.username/certificates
+set signature = "~/.mutt/signature"
 
 # Charset
 set charset = "utf-8"

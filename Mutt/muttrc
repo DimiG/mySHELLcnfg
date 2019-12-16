@@ -75,3 +75,9 @@ color index     yellow default  '~N'
 color index     brightred       default '~F' # Flagged Messages are important!
 color index     blue default    '~D'         # Deleted Mails - use dark color
 
+# ****************************************************************************
+#                                 Aliases
+# ****************************************************************************
+
+alias John_Doe John Doe <johndoe@blabla.com>
+
