@@ -17,6 +17,10 @@ macro index <F12> '<sync-mailbox><enter-command>source ~/.mutt/account.com.blabl
 # Set default text editor
 set editor = "$EDITOR"
 
+# Alias file setup
+source ~/.mutt/alias
+set alias_file="~/.mutt/alias"
+
 # ****************************************************************************
 #                            Basic Configuration
 # ****************************************************************************
@@ -42,9 +46,24 @@ ignore "DKIM-Signature:"
 hdr_order Date From To Cc
 alternative_order text/plain text/html *
 auto_view text/html
-bind editor <Tab> complete-query
+bind index G imap-fetch-mail
+# bind editor <Tab> complete-query
 bind editor ^T complete
 bind editor <space> noop
+
+# ****************************************************************************
+#                            Custom Configuration
+# ****************************************************************************
+
+# Scroll message line by line using arrows
+bind pager <up> previous-line
+bind pager <down> next-line
+
+# Scroll index line by line
+set menu_scroll
+
+# Disable artificial pauses
+set sleep_time = 0
 
 # ****************************************************************************
 #                            Color Configuration
@@ -74,10 +93,4 @@ color index     yellow default  '~O'
 color index     yellow default  '~N'
 color index     brightred       default '~F' # Flagged Messages are important!
 color index     blue default    '~D'         # Deleted Mails - use dark color
-
-# ****************************************************************************
-#                                 Aliases
-# ****************************************************************************
-
-alias John_Doe John Doe <johndoe@blabla.com>
 
