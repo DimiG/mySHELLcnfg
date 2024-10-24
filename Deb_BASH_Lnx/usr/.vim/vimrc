@@ -1,0 +1,14 @@
+" **************************************** "
+"            File Name: vimrc              "
+" **************************************** "
+"          Created by (c)2024 DG           "
+" **************************************** "
+
+" color desert
+set nocompatible
+set nowrap
+set viminfo="NONE"
+syntax on
+
+" F8: Toggle list (display unprintable characters)
+noremap <F8> :set list!<cr>
