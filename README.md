@@ -13,8 +13,10 @@ File descriptions
 * `Tmux`: This [configuration file][cnfg] is for [Tmux][tmux] program.
 * `Vim_Lnx`: These [configuration files][cnfg] specific for [Vim][vim] program.
 * `ZSH_Lnx`: These [configuration files][cnfg] specific for [Linux][linux] [ZSH][zsh] installation.
+* `ZSH_Lnx_Arch`: These [configuration files][cnfg] specific for [Arch Linux][arch] [ZSH][zsh] installation (tested with Arch Linux).
+
 * `All Configurations`:  
-   **Note:** `Dotted` hidden [configuration files][cnfg] was renamed without dots. To use it - rename them back. **See comments inside them**. [Configuration files][cnfg] may be changed TIME to TIME.  
+   **Note:** `Dotted` hidden [configuration files][cnfg] was renamed without dots (some not). To use it - rename them back. **See comments inside them**. [Configuration files][cnfg] may be changed TIME to TIME.  
    ***Requires :*** Pre-Installed [operating system][os].
 
 * `To be continued...`
@@ -26,6 +28,7 @@ This code has been written by ©2024 DG
 [bash]:https://en.wikipedia.org/wiki/Bash_(Unix_shell)
 [shell]:https://en.wikipedia.org/wiki/Shell_(computing)
 [linux]:https://en.wikipedia.org/wiki/Linux
+[arch]:https://en.wikipedia.org/wiki/Arch_Linux
 [os]:https://en.wikipedia.org/wiki/Operating_system
 [cnfg]:https://en.wikipedia.org/wiki/Configuration_file
 [macos]:https://en.wikipedia.org/wiki/MacOS
